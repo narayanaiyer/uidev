@@ -1,0 +1,70 @@
+
+<h2>CSS</h2>
+<style>
+.res-mainmenu a{
+		display:inline-block;
+		float:left;
+		padding: 5px;
+    	border-top: 0px solid #eee;
+		}
+.res-menu{
+		 display: none;
+	}	
+@media (max-width: 935px) {
+	.res-mainmenu a{
+		display:block;
+		float:none;
+		padding: 5px;
+    	border-top: 1px solid #eee;
+		}
+	.res-menu{
+		 display: block !important;
+	}	
+	.header  {
+    width: 98%;
+    text-align: center;
+    padding:0 1%;
+    border: 0;
+	}
+	.header  .mm-group{
+	    display: none;
+	}
+	.header .active {
+    	border-bottom: 0px solid #f45821;
+    	color: #fff;
+		background-color:#f45821;
+	}
+}
+</style>
+
+<h2>jQuery</h2>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(document).ready(function () {
+    // responsive menu
+	var WinWidth = $(document).width();
+	//alert(WinWidth);
+	if(WinWidth < 935){
+		$(".res-menu").show();
+		$(".header").addClass("res-mainmenu");
+	}
+	$(".res-menu").click(function(){
+		//alert("responsive open");	
+		$(".header").find(".mm-group").slideToggle();
+	});
+});
+</script>
+
+<h2>HTML</h2>
+<div class="header">
+    <div class="mm-group">
+        <a href="#home">Home</a>
+        <a href="#overview">PRODUCT OVERVIEW</a>
+        <a href="#features">Features</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#resources">Resources</a>
+        <a href="#enquiry">enquiry</a>
+    </div>
+    <div class="res-menu" style="display:none;">Menu</div>
+ </div>
